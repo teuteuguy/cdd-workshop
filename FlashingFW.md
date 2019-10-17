@@ -16,14 +16,26 @@ esptool --chip esp32 --port COM3 --baud 921600 --before default_reset --after ha
 ```
 
 **Mac/Linux**
+
 - Install esptool.py:
 ```bash
 sudo pip install esptool pyserial
 ```
-- Execute following command from the directory you placed 3 downloaded files:
+
+- IF YOU ARE RUNNING IN CLOUD9: Execute following command from the directory you placed 3 downloaded files:
+
 ```bash
+cd [THE FOLDER WHERE YOU DOWNLOADED THE 3 FILES IN PREVIOUS STEP]
 esptool.py --chip esp32 --port /dev/tty.SLAB_USBtoUART --baud 921600 --before default_reset --after hard_reset write_flash -z --flash_mode dio --flash_freq 40m --flash_size detect 0x1000 bootloader.bin 0x20000 aws_demos.bin 0x8000 partitions_example.bin
 ```
+
+- IF YOU ARE RUNNING ON YOUR LAPTOP: Execute following command from the directory you placed 3 downloaded files:
+
+```bash
+cd ~/Downloads/cdd-workshop/demos/espressif/esp32_devkitc_esp_wrover_kit/make
+esptool.py --chip esp32 --port /dev/tty.SLAB_USBtoUART --baud 921600 --before default_reset --after hard_reset write_flash -z --flash_mode dio --flash_freq 40m --flash_size detect 0x1000 ./build/bootloader/bootloader.bin 0x20000 ./build/aws_demos.bin 0x8000 ./build/partitions_example.bin
+```
+
 4. Monitor the flashing process:
 
 ```bash

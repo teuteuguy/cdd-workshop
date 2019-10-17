@@ -66,15 +66,15 @@ static const char clientcredentialMQTT_BROKER_ENDPOINT[] = <"Will be provided">;
 #define clientcredentialWIFI_SECURITY   eWiFiSecurityWPA2
 ```
 
-7. Build
+5. Build
 
 ```bash
 cd ~/Downloads/cdd-workshop/demos/espressif/esp32_devkitc_esp_wrover_kit/make
 make menuconfig
 ```
 
-8. Click *Save* and then *Exit*
-9. Execute *make* command
+6. Click *Save* and then *Exit*
+7. Execute *make* command
 
 ```bash
 make
